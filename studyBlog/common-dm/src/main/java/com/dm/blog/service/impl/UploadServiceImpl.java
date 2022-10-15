@@ -37,7 +37,7 @@ public class UploadServiceImpl implements UploadService {
         //获取文件原始名称
         String originalFilename = img.getOriginalFilename();
         //对原名称进行后缀判定，只有'.png'可以通过上传
-        if (!originalFilename.endsWith(".png")) {
+        if ((!originalFilename.endsWith(".png"))&&(!originalFilename.endsWith(".jpg"))) {
             throw new SystemException(AppHttpCodeEnum.FILE_TYPE_ERROR);
         }
 

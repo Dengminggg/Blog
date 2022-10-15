@@ -161,6 +161,9 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                 .map(tagId -> new ArticleTag(id, tagId)).collect(Collectors.toList());
         //存入博客和标签的关联
         articleTagService.saveBatch(collect);
+
+        //同步更新redis中的阅读量
+        redisCache.incrementCacheMapValue(SystemConstants.Article_View_Count, id.toString(), 0);
         return ResponseResult.okResult();
     }
 

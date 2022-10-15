@@ -23,3 +23,8 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
       id-type: auto
+#七牛云存储配置
+oss:
+  bucket: dengming-blog
+  accessKey: AmzrmEYopjD5rDrulacUJacBhj0XtE9e14dqyaZb
+  secretKey: AvXXjLIqVv_GIDeOEB8Jn6c2NENjiqyri9bLfcAl
